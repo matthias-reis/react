@@ -1,0 +1,19 @@
+{
+  "name": "react-talk",
+  "version": "1.0.0",
+  "description": "React Workshop Files",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthias-reis/react-talk.git"
+  },
+  "author": "Matthias Reis <matthias.reis@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/matthias-reis/react-talk#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.1.18",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.7",
+    "webpack": "^1.12.4",
+    "webpack-dev-server": "^1.12.1"
+  }
+}
