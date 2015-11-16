@@ -6,7 +6,7 @@ var rename = require("gulp-rename");
 
 gulp.task("js", function() {
 	return gulp.src("build/**/*.jsx")
-	.pipe(babel({presets: ['es2015']}).on('error', function (error) {
+	.pipe(babel({presets: ['es2015', 'react']}).on('error', function (error) {
 		console.log(error);
 	})).pipe(gulp.dest("build"));
 });

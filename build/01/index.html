@@ -1,38 +1,51 @@
 <html>
-<head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/app.css">
-</head>
-<body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">XING React - Introduction to React.js</a>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/app.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">XING React - Introduction to React.js</a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <div class="container xi-container">
-    <div class="page-header">
-      <h1>Render and JSX</h1>
-      <p class="lead">Get markup onto your page</p>
-    </div>
-    <!-- Content goes here -->
-    <ul>
-      <li>Example content</li>
-      <li>Example content two</li>
-    </ul>
+		<div class="container xi-container">
+			<div class="page-header">
+				<h1>Setup, Environment and Dev Tools</h1>
+				<p class="lead">How to setup your project and your machine</p>
+			</div>
+			<!-- Content goes here -->
+      <p>What I use</p>
+			<ul>
+				<li>ECMAScript 2015</li>
+				<li>React</li>
+        <li>Bootstrap for easy styling</li>
+        <li>CSS and JS files are directly loaded</li>
+        <li>No jQuery</li>
+			</ul>
+      <p>Transpiler</p>
+      <ul>
+        <li>React and ES6 can be written right now</li>
+        <li>Get transpiled by BABEL</li>
+        <li>My input files: <code>{name}.jsx</code></li>
+        <li>Transpiled output files: <code>{name}<strong>.js</strong></code></li>
+      </ul>
+      <p>Debugging</p>
+      <ul>
+        <li>Use the great Chrome Plugin</li>
+      </ul>
 
-    <div id="xi-react">
+      <h2>Demo Time</h2>
 
-    </div>
-  </div>
+			<div id="xi-react"></div>
+		</div>
 
-  <script src="https://fb.me/react-with-addons-0.14.2.js"></script>
-  <script src="https://fb.me/react-dom-0.14.2.js"></script>
-
-  <!-- JS goes here -->
-  <script src="App.js"></script>
-</body>
-
+		<!-- JS goes here -->
+    <script src="https://fb.me/react-with-addons-0.14.2.js"></script>
+    <script src="https://fb.me/react-dom-0.14.2.js"></script>
+		<script src="App.js"></script>
+	</body>
 </html>
