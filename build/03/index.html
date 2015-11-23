@@ -1,7 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -18,10 +18,30 @@
       <p class="lead">Get data into your markup</p>
     </div>
     <!-- Content goes here -->
+    <p>
+      Components have two ways to manage dynamic data:
+      <code>this.state</code> and <code>this.props</code>.
+      Let's start up with state:
+    </p>
     <ul>
-      <li>Example content</li>
-      <li>Example content two</li>
+      <li>State is an internal store, only valid for the <strong>current</strong>
+      component.</li>
+      <li>Use the class <code>constructor()</code> method to set an initial value</li>
+      <li>In case of events and other actions, thst state can change.
+        Use the method <code>this.setState()</code> for this.</li>
+      <li>Hand over an object that contains the changed properties</li>
+      <li>State internally is an immutable object. Everytime you call
+        setState, a new object is created by merging the changed properties</li>
+      <li>By calling <code>setState</code> a repaint is automatically triggered</li>
+      <li>State properties are accessible by <code>this.state.property</code></li>
+      <li>You can use that for renering state properties</li>
+      <li>But: Never modify state properties directly like
+        <code>this.state.property = 'foo'</code>.
+        This brings view and data out of sync.</li>
     </ul>
+
+    <h2>Demo Time</h2>
+
 
     <div id="xi-react">
 
