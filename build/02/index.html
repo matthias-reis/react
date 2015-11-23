@@ -1,7 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="/build/css/app.css">
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -14,18 +14,38 @@
 
   <div class="container xi-container">
     <div class="page-header">
-      <h1>Render and JSX</h1>
+      <h1>Render, Components and JSX</h1>
       <p class="lead">Get markup onto your page</p>
     </div>
     <!-- Content goes here -->
+    <p>How to start</p>
+    <ol>
+      <li><code>React.render({jsx}, {dom-node})</code> as a starting point</li>
+      <li>
+        Create a ES6 <code>class</code> that extends from <code>React.Component</code><br>
+        <small>or use <code>React.createClass()</code></small>
+      </li>
+      <li>Create a <code>render()</code> method in that class</li>
+      <li>Use the component as a custom JSX tag like <code>&lt;ComponentName/&gt;</code>
+    </ol>
+
+    <p>JSX</p>
     <ul>
-      <li>Example content</li>
-      <li>Example content two</li>
+      <li>HTML inside Javascript</li>
+      <li>Will be transpiled by Babel</li>
+      <li>Some tweaks
+        <ul>
+          <li>Use <code>className</code> instead of <code>class</code><li>
+          <li>Use curly braces for JS code</li>
+          <li>Loop with <code>Array.prototype.map()</code></li>
+        </ul>
+      </li>
+      <li><strong class="text-info">☀</strong> Use other Components as Tags</li>
     </ul>
 
-    <div id="xi-react">
+    <h2>Demo Time</h2>
 
-    </div>
+    <div id="xi-react"></div>
   </div>
 
   <script src="https://fb.me/react-with-addons-0.14.2.js"></script>

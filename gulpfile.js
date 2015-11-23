@@ -22,7 +22,7 @@ gulp.task("css", function() {
 
 
 gulp.task('run', function() {
-	gulp.src('build')
+	gulp.src('')
 	.pipe(webserver({
 		livereload: {
 			enabled: true
