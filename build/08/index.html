@@ -1,7 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -18,10 +18,18 @@
       <p class="lead">Create an event system</p>
     </div>
     <!-- Content goes here -->
+    <p>Variant 2 is a little bit more complex, but easier to handle in
+      slightly bigger scenarios
     <ul>
-      <li>Example content</li>
-      <li>Example content two</li>
+      <li>Create a global Event bus (having functions like
+        <code>trigger()</code> or <code>on()</code>)</li>
+      <li>Pass data to these Events like
+        <code>trigger(ADD_HERO, {name: 'Hawkeye'})</code></li>
+      <li>Trigger it in the action holding component (like the Button)</li>
+      <li>Consume it in the stateful component (like the HeroList)</li>
     </ul>
+    
+    <h2>Demo Time</h2>
 
     <div id="xi-react">
 

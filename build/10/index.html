@@ -1,7 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -18,10 +18,38 @@
       <p class="lead">Create and destroy components</p>
     </div>
     <!-- Content goes here -->
+    <p>A component runs through several useful methods during its
+      lifecycle:
     <ul>
-      <li>Example content</li>
-      <li>Example content two</li>
+      <li><code>componentWillMount()</code>: occurs right
+        <strong>before</strong> the initial rendering</li>
+      <li><code>componentDidMount()</code>: occurs right
+        <strong>after</strong> the initial rendering -
+        here all initial work (like the integration with other frameworks
+        or ajax calls) should be placed in here)</li>
+        <strong>before</strong> the initial rendering</li>
+      <li><code>componentWillReceiveProps(props)</code>: occurs as soon as
+        the parent component delivers new props (children included) - you
+        can safely alter the component's state here based on the
+        new props</li>
+      <li><code>shouldComponentUpdate(props, state)</code>: if this function
+        returns false, the <code>render()</code> method will not fire - use this
+        to avoid too many performance hungry repaints</li>
+        new props</li>
+      <li><code>componentWillUpdate(props, state)</code>: triggered right
+        <strong>before</strong> the re-rendering (not before the initial rendering)</li>
+        new props</li>
+      <li><code>componentDidUpdate(props, state)</code>: triggered right
+        <strong>after</strong> the re-rendering (not after the initial
+        rendering) - use this to interact with other libraries</li>
+        new props</li>
+      <li><code>componentWillUnmount()</code>: triggered right before the
+        component is removed from the dom. Use this to unset
+        intervals, timers and other cleanup tasks</li>
+      <li>
     </ul>
+
+    <h2>Demo Time</h2>
 
     <div id="xi-react">
 

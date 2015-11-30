@@ -1,7 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -18,10 +18,27 @@
       <p class="lead">Handing over callback functions</p>
     </div>
     <!-- Content goes here -->
+    <p>The main design goal for React applications is to find
+      the right way to pass the data to your components.
+      Part of this presentation are two easy methods. The ideal
+      and surely more complex structure that suits our needs
+      is to be defined afterwards</p>
+    <p>First let's start with Variant 1: Callback handover
     <ul>
-      <li>Example content</li>
-      <li>Example content two</li>
+      <li>Props don't necessarily just transport data chunks
+        to our components</li>
+      <li>Functions are first class citizens in JS and so they
+        can be passed down, too.
+      <li>Solution:
+        <ul>
+          <li>Define a function in a state holding
+          Component like <code>HeroList</code></li>
+          <li>Pass it as a prop to the Button component
+          <code>&lt;Button label="Add Superhero" callback={handleAdd}></code></li>
+      </ul></li>
     </ul>
+
+    <h2>Demo Time</h2>
 
     <div id="xi-react">
 

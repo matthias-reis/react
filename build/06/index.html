@@ -1,7 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -18,10 +18,61 @@
       <p class="lead">Control over components parameters</p>
     </div>
     <!-- Content goes here -->
+    <p>For reusability reasons, you must be aware of the data you receive from your parent</p>
     <ul>
-      <li>Example content</li>
-      <li>Example content two</li>
+      <li>With a prop type check, you can ensure, that only the right data type is transmitted</li>
+      <li>Usage
+<pre>
+MyComponent.propTypes = {
+  ...
+}
+</pre>
+        <li>Options
+        <ul>
+          <li><code>myArray: React.PropTypes.array</code>
+            For optional Arrays</li>
+          <li>Others: <ul>
+            <li>React.PropTypes.bool</li>
+            <li>React.PropTypes.func</li>
+            <li>React.PropTypes.number</li>
+            <li>React.PropTypes.object</li>
+            <li>React.PropTypes.string</li>
+          </ul> also exist</li>
+          <li><code>myChild: React.PropTypes.element</code>
+            for React Components</li>
+          <li><code>myClass: React.PropTypes.instanceOf(MyClass)</code>
+            for special classes</li>
+          <li><code>myCount: React.PropTypes.oneOf([5, 10, 15])</code>
+            restricts to certain values</li>
+          <li><code>myMessages: React.PropTypes.arrayOf(React.PropTypes.string)</code>
+            all array values must be strings</li>
+          <li>You can even define the types of object properties
+<pre>
+myData: React.PropTypes.shape({
+  color: React.PropTypes.string,
+  fontSize: React.PropTypes.number
+})
+</pre>
+          </li>
+          <li>by default all values are optional, but you can add a
+            required flag like so
+            <code>maxLength: React.PropTypes.number.<strong>isRequired</strong>
+            </code>
+          </li>
+          <li>finally, you can also create your own validation by passing a function
+<pre>
+customProp: function(props, propName, componentName) {
+  if (!/matchme/.test(props[propName])) {
+    return new Error('Validation failed!');
+  }
+}
+</pre>
+        </ul>
+      </li>
+
     </ul>
+
+    <h2>Demo Time</h2>
 
     <div id="xi-react">
 

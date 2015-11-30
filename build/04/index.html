@@ -1,7 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -18,10 +18,37 @@
       <p class="lead">Create children and inherit properties</p>
     </div>
     <!-- Content goes here -->
+    <p><code>this.props</code> are the second way to apply
+      data to components:</p>
     <ul>
-      <li>Example content</li>
-      <li>Example content two</li>
+      <li>Just add a HTML-like property to the component's declaration</li>
+      <li>Like <code>&lt;App name="List Application"/></code></li>
+      <li>This can be of any type that Javascript supports - even a function.
+        In this case, you must use curly braces.</li>
+      <li>Like <code>&lt;Counter number={42}/></code> or
+        <code>&lt;Button callback={this.onButtonClick}/></code></li>
+      <li>You can use the props in the child component
+        by using <code>this.props.propertyName</code>
+      <li>props are immutable. They should never
+        be changed by their component</li>
+      <li>the dynamic comes from the outer element</li>
     </ul>
+    <p>Combine State and Props</p>
+    <ul>
+      <li>You may hand over parts of the state -
+        e.g. of the uppermost component - to its
+        children</li>
+      <li>Like in an App component
+        <code>&lt;SideNavigation items={this.state.items}/></code></li>
+      <li>And by altering the state
+        <code>this.setState({items: [...this.state.items, myNewNavItem]})</code>, you can
+        control the behavior of the child from
+        its parent.</li>
+      <li>But beware: Think of reusability.
+        A property should only obtain the properties that it really needs.
+    </ul>
+
+    <h2>Demo Time</h2>
 
     <div id="xi-react">
 

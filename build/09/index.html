@@ -1,7 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -18,10 +18,34 @@
       <p class="lead">Data binding in React</p>
     </div>
     <!-- Content goes here -->
+    <p>The disadvantage of one-way-data-binding as in React is,
+      that you potentially have to rewire everything everytime.</p>
+    <p>So if you want to update your state when the user changes an input,
+      you need to
     <ul>
-      <li>Example content</li>
-      <li>Example content two</li>
+      <li>call an on change handler
+        <code>&lt;input <strong>onChange={this.handleChange}</strong></code>
+      </li>
+      <li>define the handler function
+<pre>
+handleChange: function(event) {
+  this.setState({value: event.target.value});
+}
+</pre>
+      </li>
+      <li>Apply the state to the input
+<code>&lt;input <strong>value={value}</strong> onChange={this.handleChange} /></code>
+      </li>
+      <li>As learnd from the past slides: If the
+        Input component is not the stateful component, you even need to
+          define handlers in one of their parent components (like Form)
+        </li>
+      <li>It is very likely that ther will be a central piece of code to
+        handle such repeititve stuff. Actually React (with addons) already
+        provides a linkState mixin that provides a simple solution</li>
     </ul>
+
+    <h2>Demo Time</h2>
 
     <div id="xi-react">
 

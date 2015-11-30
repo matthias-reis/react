@@ -1,7 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -14,18 +14,43 @@
 
   <div class="container xi-container">
     <div class="page-header">
-      <h1>Dynamic Composition</h1>
-      <p class="lead">Adding different components in different situations</p>
+      <h1>Advanced Tasks</h1>
+      <p class="lead">What's next?</p>
     </div>
     <!-- Content goes here -->
-    <ul>
-      <li>Example content</li>
-      <li>Example content two</li>
-    </ul>
-
-    <div id="xi-react">
-
-    </div>
+    <p>That was a very basic introduction to React, the view layer of a
+      possible frontend application. But several more aspects must be
+      considered for that.</p>
+    <!-- Content goes here -->
+    <p>To name but a few:</p>
+    <ol>
+      <li>How can the <strong>composition of Components</strong>
+        change over time (e.g. opening a lightbox, adding a
+        success-message on top)?<br>
+        This should actually be easy because <code>render()</code> is
+        called everytime something changes and therefore can return
+        wht you want it to return
+      </li>
+      <li>How should we <strong>load code on demand</strong>?<br>
+        As soon as the user navigates to a different
+        page / xing application, it is  most likely that
+        styles and code must be requested from the server.
+        I'm pretty sure that we don't want to deliver
+        the whole frontend on every fresh request.</li>
+      <li>What about <strong>navigation</strong>?
+        What happens when a user moves e.g. from the start
+        page to his profile?
+        <ul>
+          <li>Fresh components (js) and styles (css) must be
+            fetched (with techniques from (2))</li>
+          <li>The central area must display a different set
+            of components change (with techniques from (1))</li>
+            fetched (with techniques from (2))</li>
+          <li>The url in the browser must change</li>
+          <li>The history of the browser must be updated
+            (to get browser back to work properly)</li>
+        </ul></li>
+    </ol>
   </div>
 
   <script src="https://fb.me/react-with-addons-0.14.2.js"></script>
