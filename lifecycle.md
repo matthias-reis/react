@@ -1,0 +1,32 @@
+Example Form
+--> App: Application Component
+  --> coupled Dispatcher: AppDispatcher
+  --> child: Form
+    --> children: Input('name'), Textarea('description'), Button 
+    --> coupled Dispatcher: FormDispatcher with Parent AppDispatcher
+
+--> (User) enters "Xing" in Input
+  --> Input.validate() is called --> success
+  --> Form.handleUpdate() is called by Input.validate()
+  --> Form triggers FormDispatcher.action({type: FormDispatcher.UPDATE, name: 'Xing'})
+  --> FormDispatcher calls a registered reducer FormDispatcher.handleUpdate(prev, action)
+  --> FormDispatcher updates its FormDispatcherStore
+  --> FormDispatcherStore triggers its UPDATE event
+  --> Forms state reacts and updates its state according to FormDispatcherStore
+  --> Repaint by React (e.g. marking the field as valid)
+
+--> (User) clicks submit
+  --> Button.handleClick() is called
+  --> Form.handleSubmit() is called
+  --> Form triggers FormDispatcher.action({type: FormDispatcher.SUBMIT})
+  --> FormDispatcher calls a registered reducer FormDispatcher.handleSubmit(prev, action)
+  --> handleSubmit() triggers AppDispatcher.action({type: AppDispatcher.INPUT, name: 'Xing', description:''})
+  --> AppDispatcher calls a registered reducer AppDispatcher.handleInput(prev, action)
+  --> handleInput() posts the result to the backend (XHR)
+  --> the response callback (Promise) triggers AppDispatcher.action({type: AppDispatcher.SAVE_RESPONSE, success: false, message: 'name already exists'})
+  --> AppDispatcher calls a registered reducer AppDispatcher.handleSave(prev, action)
+  --> AppDispatcher updates its AppDispatcherStore
+  --> AppDispatcherStore triggers its UPDATE event
+  --> Apps state reacts and updates its state according to FormDispatcherStore
+  --> Forms props get updated
+  --> Repaint by React (e.g. showing a message box)

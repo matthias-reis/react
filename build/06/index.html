@@ -21,6 +21,7 @@
     <p>For reusability reasons, you must be aware of the data you receive from your parent</p>
     <ul>
       <li>With a prop type check, you can ensure, that only the right data type is transmitted</li>
+      <li>Be aware: invalid prop types only create warnings and the check is only done in (unminified) development mode!</li>
       <li>Usage
 <pre>
 MyComponent.propTypes = {
